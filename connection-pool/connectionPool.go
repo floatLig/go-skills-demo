@@ -1,4 +1,4 @@
-package main
+package connection_pool
 
 import (
 	"fmt"
@@ -28,7 +28,7 @@ func InitConnectionPool(connectionNum int64, connectionCreator func() (conn net.
 		mu:                &sync.Mutex{},
 	}
 	for i := 0; i < int(connectionNum); i++ {
-		go func() {
+		func() {
 			conn, err := connectionPool.connectionCreator()
 			if err != nil {
 				fmt.Println(err.Error())
@@ -108,4 +108,8 @@ func Close() {
 		return
 	}
 	connectionPool.close()
+}
+
+func Len() int {
+	return connectionPool.len()
 }
