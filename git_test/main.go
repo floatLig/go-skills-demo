@@ -1,5 +1,14 @@
 package main
 
-func main() {
+import "fmt"
 
+func main() {
+	fmt.Println("test")
+	fmt.Println("test")
+	fmt.Println("test")
+	fmt.Println("test")
+	fmt.Println("test")
+	fmt.Println("test")
+	fmt.Println("test")
+	fmt.Println("test")
 }
